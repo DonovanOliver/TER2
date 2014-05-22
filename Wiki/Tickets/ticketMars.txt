@@ -1,0 +1,9 @@
+Ticket: De mars au 8 mai.
+
+- Porta Benjamin:
+Creation du site web, toutes les pages de la première ligne du menu.
+(Accueil, Deposer Musique, Musiques, Quizz, Changer Style)
+Intégration en PHP du travail réalisé par les autres dans le site
+
+- Oliver Donovan: Création du lecteur avec Quentin
+- Wenzinger Quentin: Création du lecteur avec Donovan

@@ -1,0 +1,69 @@
+TER:
+
+étudiants: 
+
+Porta Benjamin
+Wenzinger Quentin
+Oliver Donovan
+Brunel Emmanuel
+
+Compte Rendu du travail:
+
+Tout d'abord, nous avons commencé par nous informer sur les applications web Audio nécessaires à la réalisation de ce projet.
+
+Un site web a été mis en place pour montrer l'évolution de notre travail.
+
+l'url est: http://localhost/www/TER/WebApp/PartageDeMusique/index.php
+
+Descriptif des boutons du site:
+-Accueil: Ici sont indiquées les différentes MAJ du site web.
+-Deposer Musique: Pour déposer une musique (.mp3 / .mp4) sur le serveur.
+-Musiques: Pour lire une des musiques stockées sur le serveur, à l'aide des nouvelles fonctionalités de HTML5
+-Relier instrument: en cours
+-Partition: en cours
+-Quizz: Pour l'instant juste une fonction qui prend une musique aléatoirement sur le serveur (ne la joue pas encore),
+ puis on essaie de trouver le titre, si 75% des mots sont juste on considère la réponse bonne. Pour l'instant j'utilise SOUNDEX en php,
+ cette librairie permet de comparer un mot à son équivalent phonétique(on tolère un peu les fautes).
+-Changer Style: on passe du style 1 au style 2 en CSS, possibilité d'en mettre autant que l'on veut
+-Synthétiseur: Un piano pour creer quelques échantillons
+-Boite à rythme: Idem
+-Son: Pour lire une musique sur un serveur.
+
+
+Définitions des Termes/Mots-clés utilisés dans le Projet:
+
+-Un échantillon (sample en anglais) est un extrait de musique ou un son réutilisé dans une nouvelle
+ composition musicale, souvent joué en boucle. L'extrait original peut être une note, 
+ un motif musical ou sonore quelconque. Il peut être original ou réutilisé en dehors de son contexte d'origine.
+
+Dans le dossier "échantillon", j'ai mis deux échantillons de guitare pour voir à quoi cela ressemble
+
+-un instrument de musique: est un objet pouvant produire un son contrôlé par un musicien — que cet objet soit conçu dans
+ cet objectif, ou bien qu'il soit modifié ou écarté de son usage premier. La voix ou les mains, même si elles
+ ne sont pas des objets à proprement parler, sont considérées comme des instruments de musique dès lors qu'elles
+ participent à une œuvre musicale.
+
+-instruments de synthèse: Un synthétiseur, ou trivialement synthé, est un instrument de musique capable de
+ créer et de manipuler des sons électroniques au moyen de tables d'ondes, d'échantillons ou d'oscillateurs 
+ électroniques produisant des formes d'ondes que l'on modifie à l'aide de circuits composés de filtres, 
+ de modulateurs d'amplitude, de générateurs d'enveloppe
+ 
+-Son harmonique:En musique, un harmonique est un composant à part entière d’un son musical (et plus généralement d'une onde),
+ qui possède une fréquence multiple de la fréquence fondamentale.
+Par exemple, si on appelle « ƒ0 » la fréquence fondamentale, les harmoniques auront des fréquences égales à : 2ƒ0, 3ƒ0 etc...
+ En prenant comme note fondamentale le « la3 » (440 Hz) du piano, les harmoniques sont toutes les notes ayant pour fréquence 
+ un multiple de 440. Les harmoniques d’une note sont donc forcément plus aigus que cette note et s'appelent harmoniques supérieurs
+ 
+-abstraction : 
+Le son est représenté par un signal analogique. Pour le numériser, on l'échantillonne :
+
+    Échantillonnage temporel : on prend la mesure du signal à intervalle régulier (fréquence d'échantillonnage).
+    Échantillonnage numérique : la valeur analogique est convertie en valeur numérique sur un nombre limité de bits.
+
+	Le signal est enregistré sous forme numérique selon deux principales méthodes :
+
+    Méthode temporelle : chaque échantillon temporel est enregistré (formats wave, au, ...),
+    Méthode fréquentielle : on décompose le signal par transformée de Fourier (formats MP3, ...).
+
+	Certains changements de niveau sonore ne sont pas perceptibles par l'oreille humaine. 
+	Les codages µ-Law et A-Law exploitent cette propriété pour encoder les niveaux en utilisant moins de bits.

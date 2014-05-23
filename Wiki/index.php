@@ -25,6 +25,7 @@
 				<H1> WebAudioPédia </H1>
 			
 			<center><a href=".."><button type="button" class="button">Accueil</button></a></center>
+			<center><a href="http://skarn.fr/TER/Wiki/index.php?title=Accueil"><button type="button" class="button">Wiki Professionnel</button></a></center>
 				
 				<div class="description">
 				

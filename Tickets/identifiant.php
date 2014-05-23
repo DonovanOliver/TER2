@@ -130,18 +130,20 @@ text-align: center
 		$data=loadStrings($_GET['prenom'].$_GET['nom'].'.txt');
 		if (strlen($data)>10){
 			$lignes=explode("%",$data);
-			echo '<center>';
+			$documents="";
+			$somme=0;
+			$documents.='<center>';
 			foreach ($lignes as $i){
 				$id=explode(";",$i);
 				//echo '<p>date:'.$id[0].'heures:'.$id[1].'commentaire:'.$id[2].'</p>';
 				if(sizeof($id)>=3){
-					echo '<table style="width:300px" border="2px">
+					$documents.='<table style="width:80%" border="2px">
 					<tr>
 					  <th>Date</th>
 					  <td>'.$id[0].'</td>
 					</tr>
 					<tr>
-					  <th>Heure de Travail</th>
+					  <th>Heures de Travail</th>
 					  <td>'.$id[1].'</td>
 					</tr>
 					<tr>
@@ -149,9 +151,21 @@ text-align: center
 					  <td>'.$id[2].'</td>
 					</tr>
 					</table></br>';
+					$somme+=(int)$id[1];
 				}
 			}
-			echo '</center>';
+			$documents.='</center>';
+			echo '<center>
+			<table style="width:300px" border="2px">
+					<tr>
+					  <th>Heures Total</th>
+					  <td>'.$somme.'</td>
+					</tr>
+					</table></br>
+				</center>';
+					
+			echo $documents;
+			
 		}
 	
 	if(isset($_GET['nouveau'])){

@@ -1,0 +1,30 @@
+2014-03-13;5;Mise en apprentissage de javascript avec le tutoriel de Mr Buffa.
+http://mainline.essi.fr/JavaScriptSlides/index.html
+		;
+%2014-03-20;4;Implémentation de Test.html, avec les interfaces graphique et Son (sans noeud).
+
+		;
+%2014-03-27;3;Implémentation d'un son, sans le spèctre.
+Avec les liens de Mr.Buffa:http://jsbin.com/ebayIPa/24/edit
+https://webaudiodemos.appspot.com/input/index.html
+http://www.storiesinflight.com/jsfft/visualizer_webaudio/
+;
+%2014-04-03;0;Rien, Car le nombre de projets a augmenter de façon exponentielle
+		;
+%2014-04-10;3;Implémentation d'un son et de son spèctre.
+Avec une grande aide de la part de Mr.Buffa.;
+%2014-04-17;4;Essai d'implanté la Boite a rythme et de comprendre dans le server(local puis celui de Quentin), sans grand succes, car les interface graphique et le son buguer.
+Avec le lien; http://webaudiodemos.appspot.com/;
+%2014-04-24;0;Rien, Car le nombre de projets a augmenter de façon exponentielle
+		;
+%2014-05-01;7;Essai d'implanté le Piano et de la Boite a rythme dans le server(local puis celui de Quentin), sans grand succes, car les interface graphique et le son buguer.
+Mais résoluts grand nombre de problèmes: des boutons et du son.
+;
+%2014-05-08;4;Essai d'implanté le Micro comme il n'y avait pas de gitub, j'ai copier les fichier et les liens des fichiers comme des librairies javascript.
+Puis remplacer les images manquante.
+;
+%2014-05-15;5;Enfin avec de la détermination j'ai pus réussir a implémanté le Piano, la Boite à rythme et le Micro.
+Et traduire la boite à Rythme et du Micro;
+%
+2014-05-22;2;Création des Tickets pour mieux comprendre, ce que chacun fait.;
+%

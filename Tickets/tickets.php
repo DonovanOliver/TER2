@@ -69,10 +69,24 @@ color: #090;
  p.green{
 color: #090;
 }
+table {
+   border: 1px solid #003366;
+}
+
+th {
+background: #385C85;
+color: #FFF;
+padding: 10px;
+padding-left: 20px;
+margin-top: 0px;
+text-align: center 
+}
   </style>
+  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </head>
 <body>
-<h1>Identifiants</h1>
+<h1>Tickets</h1>
 <center>
 	<a href="../"><button type="button" class="button">Accueil</button></a>
 </center>
@@ -80,7 +94,7 @@ color: #090;
 	function loadStrings($nom){ 
 		$data="";
 
-		$file = fopen($nom, "r") or exit("Incapable de lire le fichier!");
+		$file = fopen($nom, "r") or saveStrings($nom,"");
 		//Output a line of the file until the end is reached
 		while(!feof($file))
 		  {
@@ -96,39 +110,68 @@ color: #090;
 		fclose($fp);
 	}
 	
-	  
-	  function formulaireNouveau(){
-		return '<center>
-			<form method="POST" action="upload.php" enctype="multipart/form-data">	
-			Prénom: <input type="text" name="prenom">
-			Nom: <input type="text" name="nom">
-			 <!-- On limite le fichier à 100Ko -->
-			 <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
-			 Fichier : <input type="file" name="avatar" class="button"></br>
-			 <input type="submit" name="envoyer" class="button" value="Nouveau Identifiant">
+		
+		echo '<center><h2>'.$_GET['prenom'].' '.$_GET['nom'].'</h2>
+		
+		<form method="POST" action="ticket.php">
+		<input type="hidden" name="prenom" value="'.$_GET['prenom'].'">
+		<input type="hidden" name="nom" value="'.$_GET['nom'].'">
+		<input type="hidden" name="img" value="'.$_GET['img'].'">
+		<img src="'.$_GET['img'].'" title="'.$_GET['nom'].' '.$_GET['prenom'].'"></img></br>
+		Date: <input type="date" name="date" value="2014-01-01"></br>
+		Temps Humain(en heures): <input type="number" name="heure" min="0" max="10" value="1"></br>
+		Commentaire: <textarea rows="4" cols="50" name="commentaire">
+		Commentaire
+		</textarea></br>
+		<input type="submit" name="envoyer" class="button" value="Nouveau Ticket">
 		</form>
 		</center>';
-	  }
-	  
-	  function afficherUtilisateur($nom){
-		$data=loadStrings($nom);
+		
+		$data=loadStrings($_GET['prenom'].$_GET['nom'].'.txt');
 		if (strlen($data)>10){
-			echo "<center>";
-			$lines=explode("\n",$data);
-			foreach($lines as $i){
-				$id=explode(" ",$i);
-				echo '<a href="./tickets.php?prenom='.$id[1].'&nom='.$id[0].'&img='.$id[2].'"><img src="'.$id[2].'" title="'.$id[0].' '.$id[1].'"></img></a>';
+			$lignes=explode("%",$data);
+			$documents="";
+			$somme=0;
+			$documents.='<center>';
+			foreach ($lignes as $i){
+				$id=explode(";",$i);
+				//echo '<p>date:'.$id[0].'heures:'.$id[1].'commentaire:'.$id[2].'</p>';
+				if(sizeof($id)>=3){
+					$documents.='<table style="width:80%" border="2px">
+					<tr>
+					  <th>Date</th>
+					  <td>'.$id[0].'</td>
+					</tr>
+					<tr>
+					  <th>Heures de Travail</th>
+					  <td>'.$id[1].'</td>
+					</tr>
+					<tr>
+					  <th>Commentaire</th>
+					  <td>'.$id[2].'</td>
+					</tr>
+					</table></br>';
+					$somme+=(int)$id[1];
+				}
 			}
-			echo "</center>";
+			$documents.='</center>';
+			echo '<center>
+			<table style="width:300px" border="2px">
+					<tr>
+					  <th>Heures Total</th>
+					  <td>'.$somme.'</td>
+					</tr>
+					</table></br>
+				</center>';
+					
+			echo $documents;
+			
 		}
-	  }
-	  
-	  if(isset($_GET['nouveau'])) {
-		echo '<p class="green">L\'utilisateur a était ajouter avec succés</p>';
-	  }
-	  
-	  echo formulaireNouveau();
-	  afficherUtilisateur("identifiant.txt");
+	
+	if(isset($_GET['nouveau'])){
+		echo '<p class="green">Le ticket a était ajouter avec succés</p>';
+		
+	}
 ?>
 
 </body>

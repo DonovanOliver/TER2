@@ -11,8 +11,41 @@
         #myCanvas {
             border: 1px solid #9C9898;
         }
+		
+		h1 {
+		background: #385C85;
+		color: #FFF;
+		padding: 10px;
+		padding-left: 20px;
+		margin-top: 0px;
+		text-align: center 
+		}
+.button {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
     </style>
+	<title>Notre Boite à Rythme</title>
 <script src="http://cwilso.github.io/AudioContext-MonkeyPatch/AudioContextMonkeyPatch.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script>
 var targetX = 500, targetY = 200, targetRadius = 50;
 var playerX=0, playerY=0;
@@ -169,16 +202,6 @@ function BoiteARythme(x,y,longueurX,longueurY,nbBeats,BPM){
   this.pause=false;
   this.volume=true;
   
-  this.init=function(){
-    var longueur=this.nbBeats;
-    var hauteur=this.sons.length;
-    for(i=0;i<longueur;i++){
-      this.toucher.push([]);
-      for(j=0;j<hauteur;j++){
-        this.toucher[i].push(false);
-      }
-    }
-  };
   
   this.addSon=function(nom){
     var son=new Sound();
@@ -191,13 +214,25 @@ function BoiteARythme(x,y,longueurX,longueurY,nbBeats,BPM){
 		this.dessineJouer();
 	}
 	else{
-			time = contextSound.currentTime;
+		time = contextSound.currentTime;
 		if(this.lineX!=0){
 			this.lineX=0;
 		}
 	}
     this.dessineGrille();
   };
+  
+  this.init=function(){
+	var longueur=this.nbBeats;
+    var hauteur=this.sons.length;
+	this.toucher=new Array([]);
+		for(i=0;i<longueur;i++){
+		  this.toucher.push([]);
+		  for(j=0;j<hauteur;j++){
+			this.toucher[i].push(false);
+		  }
+		}
+	}
   
   this.dessineJouer=function(){
     if(contextSound.currentTime!== 0) {
@@ -209,12 +244,11 @@ function BoiteARythme(x,y,longueurX,longueurY,nbBeats,BPM){
     var longueur=longueurX/this.nbBeats;
     var hauteur=longueurY/this.nbSon;
       
-    line(this.lineX,0,this.lineX,height);
-    
-    if(this.indexBeat*longueur<this.lineX){
+    line(this.lineX+this.x,0,this.lineX+this.x,height);
+    if(this.indexBeat*longueur<=this.lineX){
       for(i=0;i<nbSon;i++){
         if(this.toucher[this.indexBeat][i] && this.volume){
-          this.sons[i].play();
+          this.sons[i].play(0);
         }
       }
       this.indexBeat++;
@@ -231,13 +265,14 @@ function BoiteARythme(x,y,longueurX,longueurY,nbBeats,BPM){
   };
   
   this.dessineGrille=function(){
-    grille(x,y,longueurX,longueurY,longueurX/nbBeats,longueurY/this.sons.length);
+    grille(x,y,longueurX,longueurY,longueurX/this.nbBeats,longueurY/this.sons.length);
     var nbSon=this.sons.length;
     
     var longueur=longueurX/this.nbBeats;
     var hauteur=longueurY/nbSon;
     for(i=0;i<this.nbBeats;i++){
-      for(j=0;j<nbSon;j++){ if(mousePressed&&mouseX>i*longueur&&mouseX<(i+1)*longueur&&mouseY>j*hauteur&&mouseY<(j+1)*hauteur&&!this.appuyer){
+      for(j=0;j<nbSon;j++){ 
+		if(mousePressed&&mouseX>i*longueur+this.x&&mouseX<(i+1)*longueur+this.x&&mouseY>j*hauteur+this.y&&mouseY<(j+1)*hauteur+this.y&&!this.appuyer){
              this.toucher[i][j]=!this.toucher[i][j];
              this.appuyer=true;
          }
@@ -251,7 +286,7 @@ function BoiteARythme(x,y,longueurX,longueurY,nbBeats,BPM){
     for(i=0;i<this.nbBeats;i++){
       for(j=0;j<nbSon;j++){
         if(this.toucher[i][j]){
-          ellipse(longueur*i+longueur/2,hauteur*j+hauteur/2,longueur*10/12,hauteur*10/12);
+          ellipse(longueur*i+longueur/2+this.x,hauteur*j+hauteur/2+this.y,longueur*10/12,hauteur*10/12);
         }
       }
     }
@@ -281,6 +316,24 @@ function BoiteARythme(x,y,longueurX,longueurY,nbBeats,BPM){
 	this.setSon=function(son){
 		this.volume=son;
 	}
+	
+  this.setBPM=function(BPM){
+	this.BPM=BPM;
+  }
+  this.max=nbBeats;
+  this.setNbBeats=function(nbBeats){
+    var nbSon=this.sons.length;
+	if(nbBeats>this.max){
+		for(i=this.max;i<nbBeats;i++){
+		  this.toucher.push([]);
+		  for(j=0;j<nbSon;j++){
+			this.toucher[i].push(false);
+		  }
+		}
+		this.max=nbBeats;
+	}
+	this.nbBeats=nbBeats;
+  }
   
 }
 
@@ -357,11 +410,11 @@ function Radio(nom1,nom2){
 
 function grille(x,y,longueurX,longueurY,interX,interY){
   fill("black");
-  for(i=interX;i<=longueurX;i+=interX){
-    line(i,0,i,longueurY);
+  for(i=x;i<=longueurX+x;i+=interX){
+    line(i,y,i,longueurY+y);
   }
-  for(i=interY;i<=longueurY;i+=interY){
-    line(0,i,longueurX,i);
+  for(i=y;i<=longueurY+y;i+=interY){
+    line(x,i,longueurX+x,i);
   }
 }
 
@@ -423,13 +476,13 @@ function Sound() {
     };
 
     // Finally: tell the source when to start
-    this.play = function() {
+    this.play = function(delay) {
         // We need to rebuild the graph before each play, this may seem odd but
         // web audio is optimized for that pattern
         this.buildAudioGraph();
         console.log("lecture");
         // first param = time where to start, second optional parameter = delay before playing
-        this.sourceNode.start(0, 0);
+        this.sourceNode.start(delay,0);
        
     };
 }
@@ -453,7 +506,7 @@ window.onload = function () {
   document.onmousedown=mousePress;
   document.onmouseup=mouseNotPress;
   
-  boiteARythme=new BoiteARythme(0,0,width,height,16,100);
+  boiteARythme=new BoiteARythme(100,0,width-100,height,16,100);
   
   buttonPlay = document.querySelector("#play");
   buttonStop = document.querySelector("#stop");
@@ -520,6 +573,18 @@ window.onload = function () {
   var x=0;
   function draw() {
     background("white");
+	
+	fill("black");
+	text("Pom1",20,30);
+	text("Pom2",20,80);
+	text("Pom3",20,130);
+	text("Chapeau",5,180);
+	text("Caisse",20,230);
+	text("Pied",20,280);
+	
+	boiteARythme.setBPM(document.getElementById("BPM").value);
+	boiteARythme.setNbBeats(document.getElementById("nbBeats").value);
+	
 
     //grille(0,0,width,height,100,100);
     boiteARythme.dessineToi();
@@ -534,12 +599,20 @@ window.onload = function () {
 };
     </script>
 <body>
-<canvas id="myCanvas" width="500" height="300">
+
+<h1>Notre Boite A Rythme</h1>
+<center>
+     <a href="../"><button type="button"  class="button">Accueil</button></a></br>
+<canvas id="myCanvas" width="1000" height="300">
 </canvas></br>
  <button id="play"><img src="play.png"></button>
  <button id="pause"><img src="pause.png"></button>
  <button id="stop"><img src="stop.png"></button>
  <button id="son"><img src="son.png"></button>
- <button id="sansSon"><img src="sansSon.png"></button>
+ <button id="sansSon"><img src="sansSon.png"></button></br>
+BPM<input type="number" id="BPM" min="60" max="1000" value="100" step="2" >
+ nbBeats<input type="number" id="nbBeats" min="1" max="64" value="16" step="1" ></br>
+ 
+</center>
 </body>
 </html>

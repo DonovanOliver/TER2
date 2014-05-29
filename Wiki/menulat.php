@@ -39,7 +39,7 @@
         <div class="header"></div>
         <div class="scroll"></div>
         <ul id="navigation">
-            <li class="Accueil"><a href="../?goAccueil=Accueil" title="Accueil"></a></li>
+            <li class="Accueil"><a href="../" title="Accueil"></a></li>
         </ul>
         <script type="text/javascript">
             $(function() {
@@ -59,11 +59,4 @@
 
 
 
-    <center>
-    <div id="nav">
-      <ul>
-        <li><a align="center" href="../?goAccueil=Accueil">Accueil</a></li>
-     </ul>
-    </div>
-    </center>
 		

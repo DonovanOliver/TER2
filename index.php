@@ -79,6 +79,7 @@ color: #090;
 		<a href="Micro/"><button type="button" class="button">Micro</button></a>
 		<a href="Divers/"><button type="button" class="button">Divers</button></a>
 		<a href="Wiki/"><button type="button" class="button">Wiki</button></a>
+		<a href="Tickets/"><button type="button" class="button">Tickets</button></a>
 </center>
 
 </body>

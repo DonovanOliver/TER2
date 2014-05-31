@@ -90,7 +90,7 @@ color: #090;
 	    //DEBUT DU NUAGE ICI, avec 2 css différents, c'est plus joli
 	    $param = '<param name=movie value="./Modules/Nuage/nuage.swf"  />';
 
-        $aff .= "<object type=\"application/x-shockwave-flash\" data=\"./nuage.swf\"  width=\"400\" height=\"350\" />";
+        $aff .= "<object type=\"application/x-shockwave-flash\" data=\"./nuage.swf\"  width=\"600\" height=\"525\" />";
         $param .= "<param name=bgcolor value=\"#ffffff\" />";           
         $param .= "<param name=allowscriptaccess value=\"always\" />";
         $flashvars = "<param name=flashvars value=\"tcolor=0x00aaff&tcolor2=0x000000&hicolor=0x1874CD&tspeed=200&distr=true&mode=tags&tagcloud=<tags>";

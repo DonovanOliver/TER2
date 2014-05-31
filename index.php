@@ -79,10 +79,8 @@ color: #090;
 		<a href="Micro/"><button type="button" class="button">Micro</button></a>
 		<a href="Divers/"><button type="button" class="button">Divers</button></a>
 		<a href="Wiki/"><button type="button" class="button">Wiki</button></a>
-<<<<<<< HEAD
 		<a href="Tickets/"><button type="button" class="button">Tickets</button></a>
 </center>
-=======
 	</center>
 
 <?php	
@@ -108,7 +106,7 @@ color: #090;
         $link .=  "<a href='http://www.rivieraproject.fr/BoiteARythme/' style='10'>Boite a rythme</a>"; 
         $link .=  "<a href='http://www.rivieraproject.fr/Divers/Quizz/' style='10'>Quizz</a>";
         $link .=  "<a href='http://www.rivieraproject.fr/Wiki/' style='10'>Info</a>";
-        $link .=  "<a href='http://localhost/www/TER2/BoiteARythme/notre.html' style='10'>Notre boite a rythme</a>"; 
+        $link .=  "<a href='http://www.rivieraproject.fr/BoiteARythme/notre.html' style='10'>Notre boite a rythme</a>"; 
         $link .=  "<a href='http://skarn.fr/TER/Wiki/index.php?title=Accueil' style='10'>Wiki</a>";
         
         
@@ -121,7 +119,6 @@ color: #090;
 		
 ?>
 
->>>>>>> 287acc0c020c3082b46f40544b60fca640544a0b
 
 </body>
 

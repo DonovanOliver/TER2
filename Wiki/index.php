@@ -11,7 +11,7 @@
         		
 				<!-- CSS du bouton lateral -->
 				<link rel="stylesheet" href="Css/WikiBouton.css" type="text/css" />
-				<script type="text/javascript" src="jquery-1.3.2.js"></script>
+        		<script type="text/javascript" src="jquery-1.3.2.js"></script>
 				
 				<style type="text/css">
 					ul li { margin: 20px 0 }
@@ -113,27 +113,25 @@
 					
 					<ul> 
 					
-						<li><b>Accueil :</b> Ici sont indiquées les différentes MAJ du site web.</li>
-						
-						<li><b>Deposer Musique:</b>Pour déposer une musique (.mp3 / .mp4) sur le serveur. (utile pour le Quizz), On peut également s\'en servir pour deposer un échantillon </li>
+						<li><b>Accueil :</b> Ici sont indiquées les différentes MAJ du site web.</li>															
+ 						
+ 						<li><b>Boite à Rythme :</b> Une boite à rythme, pour creer quelques échantillons. Et notre propre boite à rythme</li>
+												
+ 						<li><b>Piano :</b> Un synthé, pour creer quelques échantillons.</li>
+ 						
+ 						<li><b>Son :</b> Pour lire une musique sur un serveur web.</li>
+ 						
+ 						<li><b>Micro :</b> Pour enregistrer la voix.</li>
+ 						
+ 						<li><b>Wiki :</b> Webtools & Glossaire & Wiki</li>	
+ 						
+ 						<li><b>Deposer Musique:</b>Pour déposer une musique (.mp3 / .mp4) sur le serveur. (utile pour le Quizz), On peut également s\'en servir pour deposer un échantillon </li>
 					
-						<li><b>Musiques :</b>Pour lire une des musiques stockées sur le serveur, à l\'aide de la balise audio de HTML5</li>
-						
-						<li><b>Relier instrument :</b> A VENIR.</li>
-						
-						<li><b>Partition :</b> A VENIR.</li>
-						
-						<li><b>Quizz :</b> On prend une musique aléatoirement sur le serveur, on la joue, 
+						<li><b>Musiques :</b> Pour lire une des musiques stockées sur le serveur, à l\'aide de la balise audio de HTML5</li>	
+ 						
+ 						<li><b>Quizz :</b> On prend une musique aléatoirement sur le serveur, on la joue, 
 						puis on demande de trouver le titre, si 75% des mots sont juste on considère la réponse bonne. Pour l\'instant on utilise SOUNDEX en php,
  						cette librairie permet de comparer un mot à son équivalent phonétique(on tolère un peu les fautes).</li>
-						
- 						<li><b>Changer Style :</b> On passe du style 1 au style 2 en CSS, possibilité d\'en mettre autant que l\'on veut.</li>
-						
- 						<li><b>Synthétiseur :</b> Un synthé, pour creer quelques échantillons.</li>
- 						
- 						<li><b>Boite à Rythme :</b> Une boite à rythme, pour creer quelques échantillons.</li>
-						
- 						<li><b>Son :</b> Pour lire une musique sur un serveur web.</li>
 						
 					</ul>
 				
@@ -145,17 +143,33 @@
 					
 					<ol>
 					
-						<li> <b>Synthétiseur :</b> <br/><br/>
-							Emplacement: WebAudio/Modules/midiSynth <br/>
-							Description: Cette application met en oeuvre un "analogique" le synthétiseur polyphonique, avec une architecture vocale classique. Jouable via Internet MIDI ou le clavier virtuel(TRADUCTION A REVOIR).<br/>
+						
+						<li> <b>Boite à Rythme :</b> <br/><br/>
+							Emplacement: ../BoiteARythme/ <br/>
+							Description: Instrument de musique électronique imitant une batterie ou des instruments de percussion.<br/>
+							Enregistrer un échantillon: Utiliser la fonction Save de l\'application.<br/>
+						</li>
+						
+						<li> <b>Notre Boite à Rythme :</b> <br/><br/>
+							Emplacement: ../BoiteARythme/Notre.html <br/>
+							Description: Réalisation de notre propre boite à rythme simplifié<br/>
+						</li>
+						
+						<li> <b>Piano :</b> <br/><br/>
+							Emplacement: ../Piano/<br/>
+							Description: Cette application met en oeuvre un "analogique" le synthétiseur polyphonique, avec une architecture vocale classique. Jouable via le clavier et/ou la souris.<br/>
 							Touches: A VENIR.<br/>
 							Enregistrer un échantillon: A VENIR.<br/>
 						</li>
 						
-						<li> <b>Boite à Rythme :</b> <br/><br/>
-							Emplacement: WebAudio/Modules/MIDIDrums-master <br/>
-							Description: Plus rapide de l\'appui de contrôleur MIDI (en utilisant un Livid Instruments CNTRLR) à la machine Brillant tambour (TRADUCTION A REVOIR).<br/>
-							Enregistrer un échantillon: Utiliser la fonction Save du logiciel (EXPLICATIONS PLUS DETAILLEES A VENIR).<br/>
+						<li> <b>Son :</b> <br/><br/>
+							Emplacement: ../Son/<br/>
+							Description: Lire une musique sur un serveur web et afficher son spectre<br/>
+						</li>
+						
+						<li> <b>Micro :</b> <br/><br/>
+							Emplacement: ../Micro/<br/>
+							Description: Enregistrer un son et convertir le signal acoustique en signal électrique.<br/>
 						</li>
 					
 					
@@ -172,6 +186,6 @@
 	echo utf8_encode($affichage);
 	
 	
-
+	require "./menulat.php";
 
 ?>

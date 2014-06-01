@@ -196,6 +196,27 @@
 		
 	}
 	
+		//On vient de recevoir des musiques, il faut les ajouter au fichier CSV
+	if ($start == 3){
+		
+		//necessaire pour lire les annonce
+		$cheminCSV = "../Musiques/Echantillons/Echantillons.csv";
+		
+		//on ouvre le fichier csv en ecriture a la fin
+		$fichier_csv = fopen($cheminCSV, 'a+');
+		
+		for( $i = 0; $i <= ($n); $i = $i + 1){
+			$string = 'nom'.$i;		
+			
+			//var_dump($_FILES[$string]['name']);
+			fputs($fichier_csv, $_FILES[$string]['name']);
+			fputs($fichier_csv, "\n");
+		}
+		
+		fclose($fichier_csv);
+		
+	}
+	
 	$resBody .= "</table></center></body></html>";
 	//on affiche le contenu du Body
 	echo utf8_encode($resBody);

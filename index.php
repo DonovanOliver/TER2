@@ -80,7 +80,6 @@ color: #090;
 		<a href="Divers/"><button type="button" class="button">Divers</button></a>
 		<a href="Wiki/"><button type="button" class="button">Wiki</button></a>
 		<a href="Tickets/"><button type="button" class="button">Tickets</button></a>
-</center>
 	</center>
 
 <?php	
@@ -90,7 +89,7 @@ color: #090;
 	    //DEBUT DU NUAGE ICI, avec 2 css différents, c'est plus joli
 	    $param = '<param name=movie value="./Modules/Nuage/nuage.swf"  />';
 
-        $aff .= "<object type=\"application/x-shockwave-flash\" data=\"./nuage.swf\"  width=\"600\" height=\"525\" />";
+        $aff .= "<object type=\"application/x-shockwave-flash\" data=\"./nuage.swf\"  width=\"400\" height=\"350\" />";
         $param .= "<param name=bgcolor value=\"#ffffff\" />";           
         $param .= "<param name=allowscriptaccess value=\"always\" />";
         $flashvars = "<param name=flashvars value=\"tcolor=0x00aaff&tcolor2=0x000000&hicolor=0x1874CD&tspeed=200&distr=true&mode=tags&tagcloud=<tags>";
@@ -106,7 +105,8 @@ color: #090;
         $link .=  "<a href='http://www.rivieraproject.fr/BoiteARythme/' style='10'>Boite a rythme</a>"; 
         $link .=  "<a href='http://www.rivieraproject.fr/Divers/Quizz/' style='10'>Quizz</a>";
         $link .=  "<a href='http://www.rivieraproject.fr/Wiki/' style='10'>Info</a>";
-        $link .=  "<a href='http://www.rivieraproject.fr/BoiteARythme/notre.html' style='10'>Notre boite a rythme</a>"; 
+        $link .=  "<a href='http://www.rivieraproject.fr/BoiteARythme/notre.html' style='10'>Notre boite a rythme</a>";
+        $link .=  "<a href='http://www.rivieraproject.fr/BoiteARythme/fun/index.php' style='10'>Notre boite (+echhantillon)</a>"; 
         $link .=  "<a href='http://skarn.fr/TER/Wiki/index.php?title=Accueil' style='10'>Wiki</a>";
         
         

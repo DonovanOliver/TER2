@@ -432,7 +432,7 @@ canvas {
 		return $res;
 	}
 	
-	echo 'Musique:'.choiceList(viewMP3("..\Divers\Musiques\Musiques"));
+	echo 'Musique:'.choiceList(viewMP3("../Divers/Musiques/Musiques"));
   ?>
   <!--<p class="play" id="play"></p>
   <p class="stop" id="stop"></p>-->

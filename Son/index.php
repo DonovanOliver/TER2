@@ -88,6 +88,18 @@ canvas {
 		var canvasWaveForm, ctxWaveForm;
 		
 		var alreadyPlaying=false;
+		
+		
+		function line(context,x1,y1,x2,y2){
+		  context.beginPath();
+		  context.moveTo(x1,y1);
+		  context.lineTo(x2,y2);
+		  context.stroke();
+		}
+		
+		function fill(context,couleur){
+		  context.fillStyle = couleur;
+		}
 
 		function init() {
 			// Events for the play/stop bottons
@@ -103,9 +115,13 @@ canvas {
 
 			// create an instance of a Sound for web audio
 			sound = new Sound();
+			
+			
+			var listeDeChoix=document.getElementById("choix");
+			var choix=listeDeChoix.options[listeDeChoix.selectedIndex].value;
 
 			// loads a sound file using Ajax/Xhr2 + decode it and pass it to the sound object.
-			loadAndDecodeSample("Mr. Saxobeat.mp3", sound); 
+			loadAndDecodeSample("../Divers/Musiques/Musiques/"+choix, sound); 
 
 
 			playButton.addEventListener('click', play);
@@ -128,8 +144,10 @@ canvas {
 		function ajout(){
 			var listeDeChoix=document.getElementById("choix");
 			var choix=listeDeChoix.options[listeDeChoix.selectedIndex].value;
-			$( 'body' ).append( '<center><button id="play" class="buttonImage"><img src="play.png"></button><button id="stop" class="buttonImage"><img src="stop.png"></button><canvas height="100" width="300" id="fft"></canvas><canvas height="100" width="700" id="waveForm"></canvas></br></center>' );
-					
+			stop();
+			ctxWaveForm.clearRect ( 0 , 0 , CANVAS_WIDTH , CANVAS_HEIGHT );
+			ctx.clearRect ( 0 , 0 , CANVAS_WIDTH , CANVAS_HEIGHT );
+			init();		
 		}
 
 		// Load and decode a sound sample using Ajax/XhR2
@@ -171,7 +189,7 @@ canvas {
 		function drawSoundWaveShape(decodedBuffer) {
 
 		  waveformDrawer.init(decodedBuffer, canvasWaveForm, '#83E83E');
-		waveformDrawer.drawWave(0, canvasWaveForm.height);  
+		  waveformDrawer.drawWave(0, canvasWaveForm.height);  
 		}
 
 		function play() {
@@ -292,11 +310,13 @@ canvas {
 				}
 				return max;
 			}
-			// Fist parameter : wjere to start vertically in the canvas (useful when we draw several
+			// Fist parameter : were to start vertically in the canvas (useful when we draw several
 			// waveforms in a single canvas)
 			// Second parameter = height of the sample
 			this.drawWave = function(startY, height) {
 				var ctx = this.canvas.getContext('2d');
+				
+				
 				ctx.save();
 				ctx.translate(0, startY);
 
@@ -335,6 +355,7 @@ canvas {
 				ctx.fill();
 				
 				ctx.restore();
+				
 				}
 
 			// Builds an array of peaks for drawing
@@ -411,15 +432,15 @@ canvas {
 		return $res;
 	}
 	
-	echo 'Musique:'.choiceList(viewMP3("../Divers/Musiques/Musiques"));
+	echo 'Musique:'.choiceList(viewMP3("..\Divers\Musiques\Musiques"));
   ?>
   <!--<p class="play" id="play"></p>
   <p class="stop" id="stop"></p>-->
   
  <button id="play" class="buttonImage" ><img src="play.png"></button>
- <button id="stop" class="buttonImage"><img src="stop.png"></button>
-	<canvas height="100" width="300" id="fft"></canvas>
-	<canvas height="100" width="700" id="waveForm"></canvas>	
+ <button id="stop" class="buttonImage"><img src="stop.png"></button></br>
+	<canvas height="100" width="1000" id="fft"></canvas></br>
+	<canvas height="100" width="1000" id="waveForm"></canvas></br>
   </center>
 	
 </body>

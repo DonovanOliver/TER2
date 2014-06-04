@@ -118,6 +118,8 @@
 		var width,height;
 		var sound;
 
+		var QUAL_MUL = 30;
+
 		function background(couleur){
 		  fill(couleur);
 		  context.fillRect(0,0,width,height);
@@ -526,14 +528,64 @@
 		    this.setDecodedSample = function(sample) {
 		        this.decodedSample = sample;
 		    };
+
+			//Changer la Fréquence
+			this.changeFrequency = function(element) {
+				  // Clamp the frequency between the minimum value (40 Hz) and half of the
+				  // sampling rate.
+				  var minValue = 40;
+				  var maxValue = contextSound.sampleRate / 2;
+				  // Logarithm (base 2) to compute how many octaves fall in the range.
+				  var numberOfOctaves = Math.log(maxValue / minValue) / Math.LN2;
+				  // Compute a multiplier from 0 to 1 based on an exponential scale.
+				  var multiplier = Math.pow(2, numberOfOctaves * (element.value - 1.0));
+				  // Get back to the frequency value between min and max.
+				  this.filter.frequency.value = maxValue * multiplier;
+			};
+
+			//Modifier la Qualité
+			this.changeQuality = function(element) {
+				  this.filter.Q.value = element.value * QUAL_MUL;
+			};
+
+			//ACTIVER / DESACTIVER LE FILTRE
+			this.toggleFilter = function(element) {
+				  this.sourceNode.disconnect(0);
+				  this.filter.disconnect(0);
+				  // Check if we want to enable the filter.
+				  if (element.checked) {
+				    // Connect through the filter.
+				    this.sourceNode.connect(this.filter);
+				    this.filter.connect(contextSound.destination);
+				  } else {
+				    // Otherwise, connect directly.
+				    this.sourceNode.connect(contextSound.destination);
+				  }
+			};
+
 		
 		    this.buildAudioGraph = function() {
 		        // We create a web audio node that will be the source of the graph
 		        this.sourceNode = contextSound.createBufferSource();
 		        // It will contain the decoded sound sample
 		        this.sourceNode.buffer = this.decodedSample;
-		        // we connect the source node (sample) to the destination node (speakers)
-		        this.sourceNode.connect(contextSound.destination);
+
+		        /**
+		        *		Creation d'un filtre avec web audio
+		        **/
+
+		     	this.filter	= contextSound.createBiquadFilter();
+		     	this.filter.type = 0; // LOWPASS
+		     	this.filter.frequency.value = 5000;
+
+		     	//on applique les filtres
+		     	this.changeFrequency(document.getElementById("freq"));
+		     	this.changeQuality(document.getElementById("qual"));
+
+		     	// Soit le filtre est activé soiton démarre comme avant si désactivé
+			    // Connect through the filter.
+				this.toggleFilter(document.getElementById("c1"));
+				
 		        console.log("graphe web audio construit");
 		    };
 		
@@ -545,6 +597,10 @@
 		        console.log("lecture");
 		        // first param = time where to start, second optional parameter = delay before playing
 		        this.sourceNode.start(delay,0);
+
+		     	// Save source and filterNode for later access.
+		        //this.sourceNode = sourceNode;
+		        //this.filter = filter;
 		       
 		    	};
 		}
@@ -619,7 +675,7 @@
 		  buttonSansSon.addEventListener("click", function() {
 		    boiteARythme.setSon(false);
 		  });
-		
+
 		
 		  function setup(){
 		    boiteARythme.init();
@@ -705,8 +761,7 @@
 			
 			boiteARythme.setBPM(document.getElementById("BPM").value);
 			boiteARythme.setNbBeats(document.getElementById("nbBeats").value);
-			
-		
+					
 		    //grille(0,0,width,height,100,100);
 		    boiteARythme.dessineToi();
 		    
@@ -741,6 +796,15 @@
  <button id="sansSon"><img src="../sansSon.png"></button></br>
  BPM<input type="number" id="BPM" min="60" max="1000" value="100" step="2" >
  nbBeats<input type="number" id="nbBeats" min="1" max="64" value="16" step="1" ></br>
+ 
+
+<input type="checkbox" id="c1" checked="false" onchange="boiteARythme.toggleFilter(this);">
+<label for="c1"><span></span>Enable filter</label></p>
+
+<p><input type="range" id="freq" min="0" max="1" step="0.01" value="1" onchange="boiteARythme.changeFrequency(this);"> Frequency</p>
+
+<p><input type="range" id="qual" min="0" max="1" step="0.01" value="0" onchange="boiteARythme.changeQuality(this);"> Quality</p>
+
  <?php 
  
 		

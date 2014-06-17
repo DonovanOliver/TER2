@@ -1,0 +1,52 @@
+Affichage Réglé pour la lecture en plein écran, zoom maximum tant que l'on voit le numéro de la page
+
+Partie de la presentation:
+
+- Refonte de la présentation du sujet (probablement à améliorer)
+- Nouveau sommaire  //!\\ Bug si zoom/dezoom, il faudra faire attention le jour de la présentation (il faut que ça reste aligné)
+- Introduction 1/1 allégée
+- Introduction 2/2 a modifier, je le ferai plus tard, je vois pas quoi mettre maintenant.
+
+def convolution:
+le produit de convolution est un opérateur bilinéaire et un produit commutatif, généralement noté « \ast », qui à deux fonctions f et g 
+sur un même domaine infini, fait correspondre une autre fonction « f\ast g » sur ce domaine, qui en tout point de celui-ci est égale à 
+l'intégrale sur l'entièreté du domaine (ou la somme si celui-ci est discret) d'une des deux fonctions autour de ce point, pondérée par l'autre 
+fonction autour de l'origine - les deux fonctions étant parcourues en sens contraire l'une de l'autre (nécessaire pour garantir la commutativité). 
+
+- Légère modification des principes (un peu plus d'espace pour faire plus joli et ajout du gras
+- Web audio 1/4 ajout du gras
+
+def DOM:
+Le Document Object Model (ou DOM) est un standard du W3C qui décrit une interface indépendante de tout langage de programmation 
+et de toute plate-forme, permettant à des programmes informatiques et à des scripts d'accéder ou de mettre à jour le contenu, 
+la structure ou le style de documents XML et HTML1. Le document peut ensuite être traité et les résultats de ces traitements peuvent 
+être réincorporés dans le document tel qu'il sera présenté.
+
+Pour ne pas être pris au dépourvu, je note les definitions des mots que je ne connais pas très bien
+
+- Web audio 2/4 ajout gras
+- Web audio 3/4 ajout gras, légère épuration et mise en page
+
+def PCM: 
+La modulation d'impulsion codée ou MIC, (en anglais Pulse Code Modulation, généralement abrégé en PCM1) est une représentation numérique non 
+compressée d'un signal analogique via une technique d'échantillonnage. Cette technique est utilisée pour la voix en télécommunications (RTC ou VoIP)
+
+def VoIP
+La voix sur IP, ou « VoIP » pour Voice over IP, est une technique qui permet de communiquer par la voix
+
+- Web audio 4/4 ajout gras
+
+- Gestion de projet Page refaite
+- Demo 1/N page refaite
+- Demo 2/N page gras
+- Demo 3/N page gras
+- Demo 4/N page Mis en attente...
+- Demo 5/N page Mis en attente...
+- Fusion de deux instruments 1/2 ébauche de la page créée
+- Fusion de deux instruments 2/2 page en attente de la creation de la video
+- Problèmes rencontrés ébauche de la page créée
+- Points forts courte ébauche créée
+- Points faibles très courte ébauche créée
+- Conclusion 1/2
+- Conclusion 2/2 gras
+

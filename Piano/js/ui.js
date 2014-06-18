@@ -101,7 +101,7 @@ function setupSynthUI() {
 	synthBox = document.getElementById("synthbox");
 	
 	var mode = createSection( "mode", 10, 10, 87, 342 );
-	mode.appendChild( createDropdown( "modewave", "shape", 12, 15, ["sinusoidale","carre", "scie", "triangle"], currentModWaveform, onUpdateModWaveform ))
+	mode.appendChild( createDropdown( "modewave", "forme", 12, 15, ["sinusoidale","carre", "scie", "triangle"], currentModWaveform, onUpdateModWaveform ))
 	mode.appendChild( createKnob( "mFreq", "fréquence", 80, 12, 65, 0, 10, currentModFrequency, "#c10087", onUpdateModFrequency ) );
 	mode.appendChild( createKnob( "modeOsc1", "osc1 tremolo", 80, 12, 160, 0, 100, currentModOsc1, "#c10087", onUpdateModOsc1 ) );
 	mode.appendChild( createKnob( "modeOsc2", "osc2 tremolo", 80, 12, 255, 0, 100, currentModOsc2, "#c10087", onUpdateModOsc2 ) );

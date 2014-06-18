@@ -402,7 +402,7 @@ canvas {
 			}
 		}
 	</script>
-	<h1>Lecteur Audio</h1>
+	<h1>Son</h1>
   <center>
      <a href="../"><button type="button" class="button">Accueil</button></a></br>
   <?php

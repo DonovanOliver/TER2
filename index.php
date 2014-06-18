@@ -75,7 +75,7 @@ color: #090;
 	<center>
 		<a href="BoiteARythme/"><button type="button" class="button">Boite à Rythme</button></a>
 		<a href="Piano/"><button type="button" class="button">Piano</button></a>
-		<a href="Son/"><button type="button" class="button">Son</button></a>
+		<a href="Son/"><button type="button" class="button">Lecteur Audio</button></a>
 		<a href="Micro/"><button type="button" class="button">Micro</button></a>
 		<a href="Divers/"><button type="button" class="button">Divers</button></a>
 		<a href="Wiki/"><button type="button" class="button">Wiki</button></a>

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset=utf-8 />
-<title>Son</title>  
+<title>Lecteur Audio</title>  
   <script src="http://cwilso.github.io/AudioContext-MonkeyPatch/AudioContextMonkeyPatch.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <style>
@@ -402,7 +402,7 @@ canvas {
 			}
 		}
 	</script>
-	<h1>Son</h1>
+	<h1>Lecteur Audio</h1>
   <center>
      <a href="../"><button type="button" class="button">Accueil</button></a></br>
   <?php

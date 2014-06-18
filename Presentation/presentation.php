@@ -59,8 +59,8 @@
 					Coordinateur : Michel Buffa<br>
 				</h2>
                 <p>
-                    <img id="title-header" src='img/audio2.png'>
                     <img id="uulm-logo" src='img/logo.png'>
+                    <img id="title-header" src='img/audio2.png'>
                 </p>
 			</article>
 		

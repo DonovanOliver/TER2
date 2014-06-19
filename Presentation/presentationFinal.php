@@ -3,7 +3,7 @@
 <!--
   Google HTML5 slide template
 
-  Authors: Luke Mah√© (code)
+  Authors: Luke Mah√É¬© (code)
            Marcin Wichary (code and design)
            
            Dominic Mazzoni (browser compatibility)
@@ -26,11 +26,14 @@
 
 
 <head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
 	<link href="lib/styles.css" media="screen" rel="stylesheet" type="text/css" />
 	<link href="lib/uulm/uulm.css" media="screen" rel="stylesheet" type="text/css" />
-	
+
 	<link href="presentation.css" media="screen" rel="stylesheet" type="text/css" />
-	
+
 
 	<script src='lib/slides.js'></script>
 
@@ -50,7 +53,7 @@
 
 		<section>
 			<article class='title-slide'>
-				<h1 id="title">Cr&eacute;er des instruments virtuels ‡ l'aide de l'API HTML5 WebAudio</h1>
+				<h1 id="title">Cr&eacute;er des instruments virtuels √† l'aide de l'API HTML5 WebAudio</h1>
 				<h2 id="author">
 					Porta Benjamin<br>
 					Oliver Donovan<br>
@@ -79,15 +82,15 @@
 		<br/>
 
 		<p>
-		HTML5 propose un nouvel ÈlÈment, la balise HTML &lt;audio&gt;, mais pour de l'audio streamÈ.   
+		HTML5 propose un nouvel √©l√©ment, la balise HTML &lt;audio&gt;, mais pour de l'audio stream√©.   
 		</p>
-		  
+
 		<p>
-		Les applications musicales (MAO) et les jeux ont des besoins diffÈrents : faible latence, effets spÈciaux, prÈcision du timing, etc...
+		Les applications musicales (MAO) et les jeux ont des besoins diff√©rents : faible latence, effets sp√©ciaux, pr√©cision du timing, etc...
 		</p>
-		  
+
 		<p>
-		L'API HTML5 Web Audio rÈpond ‡ ces besoins ‡ l'aide d'une API JavaScrip, une des plus complËte/complexe proposÈe par la spÈcification HTML5.
+		L'API HTML5 Web Audio r√©pond √† ces besoins √† l'aide d'une API JavaScrip, une des plus compl√®te/complexe propos√©e par la sp√©cification HTML5.
 		</p>
 		
 		<br/>
@@ -95,7 +98,7 @@
 		<p>
 		<b>Notre travail :</b> 
 			<ul>
-		        <li>RÈaliser des instruments virtuels ‡ l'aide de cette librairie</li>
+		        <li>R√©aliser des instruments virtuels √† l'aide de cette librairie</li>
 		        <li>Essayer de faire une abstraction pour pouvoir manipuler plusieurs instruments dans une application musicale</li>
 		  	</ul>
 		</p>
@@ -108,7 +111,7 @@
         <h3>Principes de WebAudio	(1/2)</h3>    
         	
 			<p>
-			Concept principal : le graphe audio, composÈ de noeuds (Èchantillons musicaux, effets, controle de volume, de stÈrÈo, reverbÈration, distorsion, mais aussi gÈnÈrateurs d'ondes, oscillateurs, modulation de frÈquence, etc.)
+			Concept principal : le graphe audio, compos√© de noeuds (√©chantillons musicaux, effets, controle de volume, de st√©r√©o, reverb√©ration, distorsion, mais aussi g√©n√©rateurs d'ondes, oscillateurs, modulation de fr√©quence, etc.)
 			</p>
 			  
 			<br/>
@@ -121,7 +124,7 @@
         <h3>Principes de WebAudio	(2/2)</h3>    
         
         <p>
-        <b>Mais comme rien ne vaut une dÈmo pour expliquer:</b>
+        <b>Mais comme rien ne vaut une d√©mo pour expliquer:</b>
         </p>
         
         <br/>
@@ -136,15 +139,15 @@
 	  <h3>
 	    Exemples d'instruments virtuels Web Audio	(1/2)
 	  </h3>
-	  
+
 	  <br/><br/>
-	  
+
 	  <img class="centered" src="./img/tumblr_lymd99z2KT1qbis4g.png" alt=""  height="220"/><br/>
-	  
+
 	  <br/>
-	  
+
 	  <img class="centered" src="./img/moogdoodle.jpg" alt="" height="150"/>
-	
+
 	</article>
 
 	<article>
@@ -161,31 +164,31 @@
 
 	<article class="smaller">	
 		<h3>
-		PremiËre partie de notre travail
+		Premi√®re partie de notre travail
 		</h3>
 		
 		<ul>
-			<li>Etudier la librairie Web Audio et les principes de crÈation / manipulation du graphe audio</li>
+			<li>Etudier la librairie Web Audio et les principes de cr√©ation / manipulation du graphe audio</li>
 		
 			<ul>
-		        <li>Lecture, Ètude de dÈmos et tutoriaux</li>
-		        <li>ComprÈhension des principes de la synthËse sonore analogique (‡ base de gÈnÈrateurs d'ondes)</li>
-		        <li>Ecriture de nombreuses petites dÈmos:</li>
+		        <li>Lecture, √©tude de d√©mos et tutoriaux</li>
+		        <li>Compr√©hension des principes de la synth√®se sonore analogique (√† base de g√©n√©rateurs d'ondes)</li>
+		        <li>Ecriture de nombreuses petites d√©mos:</li>
 		        <table>
 		        <ul>
-		        
+
 		        	<tr>
-		        	<td><b>GÈnÈration de son</b></td><td> <img class="centered" src="./img/micro.png" width=300 height="100" alt="" /> </td>
+		        	<td><b>G√©n√©ration de son</b></td><td> <img class="centered" src="./img/micro.png" width=300 height="100" alt="" /> </td>
 		        	</tr>
-		        	
+
 		        	<tr>
-		        	<td><b>Lecteur audio avec frÈquences</b></td><td> <img class="centered" src="./img/lecteur.png" width=300 height="100" alt="" /> </td>
+		        	<td><b>Lecteur audio avec fr√©quences</b></td><td> <img class="centered" src="./img/lecteur.png" width=300 height="100" alt="" /> </td>
 		        	</tr>
-		        	
+
 		        	<tr>
 		        	<td><b>Playground</b></td><td> <img class="centered" src="./img/playground.png" width=300 height="100" alt="" /> </td>
 		        	</tr>
-		        	
+
 		        </ul>
 		        </table>
 		    </ul>
@@ -193,64 +196,65 @@
 		</ul>
 
 	</article>
-	
+
 	<article>
-	
+
 		<h3>
-		Cas du synthÈtiseur
+		Cas du synth√©tiseur
 		</h3>
-		
+
 		<br/>
 		<img class="centered" src="./img/synthe.png" width=750  alt="" /> 
 	</article>
 
 
-	<article>
-	
+	<article class="smaller">
+
 		<h3>
-		Explications de ce qu'on a compris
+		Ce que nous a apport√© l'analyse du synth√©tiseur :
 		</h3>
 		
 		<br/>
 		  
 		<ul>
-		    <li>Comment on fait un son (ondes + oscillateurs)</li>
-		    <li>Comment on altËre un son (modulation, filtres, etc)</li>
-		    <li>La GUI c'est aussi assez compliquÈ (composants spÈcifiques)</li>
-		    <li>etc...</li>
-		    
+		    <li>Compr√©hension de son fonctionnement g√©n√©ral. (oscillos, filtres)</li>
+		    <li>Etude de l'addition de signaux des oscillateurs pour cr√©er un nouveau signal.
+		    <li>Compr√©hension du fonctionnement des filtres (Q, attaque, m√©lange, volume, forme d'ondes, ... )</li>
+		    <li>Compr√©hension de diverses notions de musiques. (octaves, solf√®ges, ...) </li>
+		    <li>La GUI comme les diff√©rentes notions sont maintenant clair pour nous, elles √©taient assez obscur au d√©but.</li>
+
 		    <br/>
-		    
+
 		    <p>
-		    On a pu ensuite en Ècrire un "‡ nous" pour bien comprendre
+		    On a pu ensuite √©crire le notre une fois que nous avions compris les notions n√©cessaire.
 		    </p>
-		    
+
 		</ul>
   
 	</article>
 
 	<article>
-	
+
 		<h3>
-		Notre synthÈtiseur
+		Notre synth√©tiseur
 		</h3>
-		
+
 		<p>
-		<iframe src="http://jsbin.com/gokukazo/22"></iframe>
+		<iframe src="http://jsbin.com/gokukazo/24"></iframe>
 		</p>
 
 	</article>
-	
+
 		<article>
 		<h3>
-		Cas de la boÓte ‡ rythmes
+		Cas de la bo√Æte √† rythmes
 		</h3>
 		<iframe src="http://www.rivieraproject.fr/BoiteARythme/"></iframe>
 	</article>
 
 
 	<article>
-	
+
 		<h3>
 		Explications de ce qu'on a compris
 		</h3>
@@ -259,18 +263,18 @@
 		
 			<br/>
 		
-		    <li>fonctionne avec des Èchantillons</li>
+		    <li>fonctionne avec des √©chantillons</li>
 		    
-		    <li>Chaque son est toujours reproduit en totalitÈ et de faÁon cyclique</li>
+		    <li>Chaque son est toujours reproduit en totalit√© et de fa√ßon cyclique</li>
 		    
-		    <li>AltÈration du son gr‚ce ‡ des effets (filtres, ...)</li>
+		    <li>Alt√©ration du son gr√¢ce √† des effets (filtres, ...)</li>
 		    
-		    <li>la ligne reprÈsente le temps parcouru sur le cycle</li>
+		    <li>la ligne repr√©sente le temps parcouru sur le cycle</li>
 		    
 		    <br/>
 		    
 		    <p>
-		    On a pu ensuite en Ècrire un "‡ nous" pour bien comprendre
+		    On a pu ensuite en √©crire un "√† nous" pour bien comprendre
 		    </p>
 		    
 		</ul>
@@ -280,7 +284,7 @@
 	<article>
 	
 		<h3>
-		Notre boÓte ‡ rythmes
+		Notre bo√Æte √† rythmes
 		</h3>
 		
 		<br/>
@@ -292,37 +296,37 @@
 	<article>
 	
 		<h3>
-		ProblËmes diffÈrents ici...
+		Probl√®mes diff√©rents ici...
 		</h3>
 		  
 		<br/>
 		  
 		<ul>
-			<li>NÈcessitÈ de bien comprendre les concepts de mesures / temps, BPMs</li>
-		    <li>Chargement asynchones des Èchantillons</li>
-		    <li>L'animation doit Ítre synchronisÈe (elle est ‡ 60 im/s), et mesure du temps trËs prÈcise nÈcessaire (au millioniËme de seconde).</li>
+			<li>N√©cessit√© de bien comprendre les concepts de mesures / temps, BPMs</li>
+		    <li>Chargement asynchones des √©chantillons</li>
+		    <li>L'animation doit √™tre synchronis√©e (elle est √† 60 im/s), et mesure du temps tr√®s pr√©cise n√©cessaire (au millioni√®me de seconde).</li>
 		    <li>Ajout de filtres, analyzer</li>
-		
+
 		</ul>
 
 	</article>
 
 	<article>
-	
+
 		<h3>
 		Points communs et abstraction
 		</h3>
-		  
+
 		<p>
-		Points communs : initialisation du contexte audio, filtres, controles de volume / gain, connexion finale du graphe aux hauts parleur.
+		Points communs : initialisation du contexte audio, filtres, controles de volume / gain, connexion finale du graphe aux hauts parleurs.
 		</p>
-			
+
 		<p>
-		C'est cette partie qu'on a d˚ factoriser. 
+		C'est cette partie qu'on a d√ª factoriser. 
 		</p>
-		  
+
 		<p>
-		Deux instruments = deux graphes sÈparÈs mais qui se rejoignent vers les HPs et qui partagent le mÍme contexte d'utilisation.
+		Deux instruments = deux graphes s√©par√©s mais qui se rejoignent vers les hauts parleurs et qui partagent le m√™me contexte d'utilisation.
 		</p>
 		
 		<br/>
@@ -336,23 +340,23 @@
 		<h3>
 		Exemple d'application joignant les deux instruments
 		</h3>
-		
-		<p>insertion de la vidÈo ici (30 secondes)</p>
+
+		<p>insertion de la vid√©o ici (30 secondes)</p>
 
 	</article>
 
-	
+
 	<article>
-	
+
 		<h3>
 		Gestion de projet : qui a fait quoi, mise en oeuvre, outils, etc.
 		</h3>
-		
+
 		<ul>
 		    <li>Repository Git</li>
 		    <li>Gestionnaire de tickets</li>
 		    <li>Wiki pour la documentation</li>
-		    <li>RÈunions rÈguliËres et partage du travail</li>
+		    <li>R√©unions r√©guli√®res et partage du travail</li>
 		</ul>
   
   		<br/>
@@ -360,41 +364,41 @@
   		<img class="centered" src="./img/wiki.png" height="50"  alt="" /> 
   		<img class="centered" src="./img/github.png" height="200"  alt="" /> 
 	</article>
-	
+
 	<article>
-	
+
 		<h3>
-		Points forts / faibles, difficultÈs rencontrÈes...
+		Points forts / faibles, difficult√©s rencontr√©es...
 		</h3>
-		
+
 		<br/>
-		
+
 		<ul>
-		  <li>Manque de temps</li>
+		  <li>Mauvaise organistation au d√©but</li>
 		  <li>JavaScript</li>
-		  <li>WebAudio = grosse API, concepts peu Èvidents</li>
+		  <li>WebAudio = grosse API, concepts peu √©vidents</li>
 		  <li>Nous ne sommes pas musiciens</li>
-		  <li>Gestion du temps du graphe (pas de stop/pause, on casse et on reconstruit le graphe ‡ chaue fois, on avait pas compris au dÈbut)</li>
+		  <li>Gestion du temps du graphe (pas de stop/pause, on casse et on reconstruit le graphe √† chaque fois, on avait pas compris au d√©but)</li>
 		</ul>
 
 	</article>
-	
-	
+
+
 	<article>
-	
+
 		<h3>
 		Perspectives et conclusion
 		</h3>
-		
-		
+
+
 		<ul>
-		  <li>On a eu des difficultÈs mais on pense qu'on a bien compris comment marchait WebAudio maintenant, pour la partie "instruments",</li>
-		  <li>Monsieur Buffa nous pousse a finaliser le projet pour Èventuellement prÈparer des dÈmos pour la premiËre confÈrence sur Web Audio qui se tiendra ‡ l'IRCAM en Janvier 2015</li>
-		  <li>Assez mauvaise gestion de projet au dÈbut, on ne connaissait pas Github, on a beaucoup appris de cette expÈrience (dans la douleur parfois)</li>
-		  <li>Gros progrËs en JavaScript !</li>
-		  <lI>On a envie de continuer le projet...</lI>
+		  <li>On a eu des difficult√©s mais on pense qu'on a bien compris comment marchait WebAudio maintenant, pour la partie "instruments",</li>
+		  <li>On ne connaissait pas Github √©galement... on a beaucoup appris de cette exp√©rience (dans la douleur parfois)</li>
+		  <li>Gros progr√®s en JavaScript !</li>
+		  <li>Monsieur Buffa nous pousse a finaliser le projet pour √©ventuellement pr√©parer des d√©mos pour la premi√®re conf√©rence sur Web Audio qui se tiendra √† l'IRCAM en Janvier 2015</li>
+		  <li>On a envie de continuer le projet...</li>
 		</ul>
-		
+
 	</article>
     
   

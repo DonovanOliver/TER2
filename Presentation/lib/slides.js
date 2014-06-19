@@ -794,7 +794,7 @@ function enumrateSlides() {
 		var el = document.createElement('footer');
 		var span = document.createElement('span');
 		span.className = 'slide-nr';
-		span.innerHTML = "" + (i + 1);
+		span.innerHTML = "" + (i + 1) + " / 19";
 		el.appendChild(span);
 		slide.appendChild(el); 
 	}

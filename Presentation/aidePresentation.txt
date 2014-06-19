@@ -1,0 +1,102 @@
+Slide 1 et 2
+
+// manu
+introduction + tag audio
+
+Slide 3:
+
+//dono
+des noeuds audio sont liés ensemble pour former un graphe de routage audio
+
+un noeud peut être: - une source audio (échantillon ou son généré avec la synthèse sonore) ( 1 sortie, pas d'entrée)
+
+		    (1 entrée et 1 sortie) pour les 3 suivants
+		    - un filtre (gestion des fréquences / qualité etc..)
+		    - un analiser (tracer les courbes)
+		    - un effet : (distorsion, ...)
+		    
+		    
+		    - la destination (1 entrée et la sortie vers les hauts parleurs)
+		    
+Cette conception modulaire permet la souplesse nécessaire pour créer des fonctions audio complexes avec des effets dynamiques.
+
+Le temps est contrôlé avec précision, une faible latence, avec la possibilité de cibler des
+échantillons spécifiques, même à un taux d'échantillonnage élevé.
+
+
+//moi
+L'API Web Audio permet également de contrôler la manière dont l'audio est spatialisé.(ou l'auditeur en mouvement, avec mono, stéréo, quad, 5.1, etc... .).
+
+Slide 4
+
+//moi
+=> anim
+
+Slide 5 / 6
+Voici des exemples de VSTi (MAO) que l'on peut trouver sur le marché, nous voyons qu'il y a deux types d'instruments, ceux à base d'échantillon 
+et ceux à base de synthèse sonoregénéralement, un synthé est à base de synthèse sonore mais rien n'empeche d'en avoir un avec échantillons (chaque note est enregistrée)
+Sinon, idem pour la boîte à rythmes (les sons peuvent être générés à l'aide de la synthèse sonore) mais cela n'est pas très conventionnel
+
+Slide 7
+
+//dono
+Mise en place de plusieurs démo (+ implémentation) notament boîte à rythmes / synthe / Lecteur audio / micro / playground
+
+micro, on recupere le son avec recorder.js grâce à la méthode setupDownload, qui permet a l'utilisateur de l'avoir au format wav,
+ avec un liens qui permet de convertir en mp3.
+
+Le Lecteur audio avec fréquences permet de voir quel est la forme de la fréquence généré par le son et de son spectre.
+
+
+
+//quentin
+=> Synthèse sonore
+
+Slide 8 / 9 / 10
+//quentin + manu 
+=> description synthe demo + analyse + notre synthe
+
+Slide 11
+
+//dono 
+
+=> lancer la demo de la boîte à rythme
+
+Slide 12/13
+
+//dono
+Expliquez ce que l'on a compris (gestion du temps (ligne), sons (échantillons) ... (bpm, nbbeats)
+Ensuite expliquez comment tu as realisé la boite ( 1) dessiner l'interface, 2) gestion du delay, 3) creation du graphe (sons dans buffer vers destination) ...) 
+
+//moi
+Ajout de la gestion "N échantillons" a la boite (php)
+Ajout d'un filtre (fréquences, qualité) 
+Ajout d'un analyser (connecte au filtre vers javascript node vers destination) => courbes
+frequence:
+spectre:
+wave:
+
+Slide 15/16
+
+Points communs, puis explication du graphe
+
+=> lancer la video
+
+Retour sur graphe
+
+Slide 17
+
+//dono
+dis que l'on a fait le github et le gestionnaire de tickets et apres que si à la fin il nous reste du temps, on leur montrera.
+
+Slide 18
+
+//manu
+
+Slide 19
+
+//manu
+
+//dono ou moi
+Les deux derniers points de la conclusion
+

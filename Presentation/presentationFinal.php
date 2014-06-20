@@ -341,8 +341,12 @@
 		Exemple d'application joignant les deux instruments
 		</h3>
 
-		<p>insertion de la vidéo ici (30 secondes)</p>
-
+		<br/>
+		
+		<a href="https://www.youtube.com/watch?v=-_KpW0rKqEk&feature=youtu.be">Lien vers la vidéo de démo</a>
+		
+		<br/><br/>
+		<img class="centered" src="./img/screen.png" height="300"  alt="" /> 
 	</article>
 
 
